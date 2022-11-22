@@ -11,6 +11,10 @@ export const GlobalStyle = createGlobalStyle`
         outline: none;
     }
 
+    a{
+        text-decoration: none;
+    }
+
     body{
         background-color: #333;
         color: #fff;
