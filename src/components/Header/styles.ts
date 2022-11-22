@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const HeaderApp = styled.header`
-  padding: 0.75rem 1.25rem;
+  padding: 0.5rem 1.25rem;
   background: linear-gradient(
       0deg,
       rgba(0, 22, 136, 0.2),
@@ -34,6 +34,7 @@ export const NavLeftSide = styled.div`
       #0300af 100%
     );
     -webkit-background-clip: text;
+    background-clip: text;
   }
 
   h2 {
