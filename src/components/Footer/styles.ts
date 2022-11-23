@@ -9,6 +9,7 @@ export const FooterContainer = styled.div`
       rgba(0, 22, 136, 0.2)
     ),
     #000000;
+  border-top: 3px solid ${(props) => props.theme.white};
 `
 export const FooterContent = styled.div`
   display: flex;
