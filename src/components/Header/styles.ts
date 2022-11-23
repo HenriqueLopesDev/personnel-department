@@ -19,10 +19,11 @@ export const NavBar = styled.nav`
 export const NavLeftSide = styled.div`
   display: flex;
   align-items: center;
+  font-size: 1.125rem;
   gap: 1rem;
 
   span {
-    font-size: 1.75rem;
+    font-size: 2rem;
     font-weight: 900;
     -webkit-text-fill-color: transparent;
     background-image: linear-gradient(
@@ -62,6 +63,10 @@ export const NavRightSide = styled.div`
     border-top: 3px solid transparent;
     border-bottom: 3px solid transparent;
     transition: border-bottom 0.3s;
+
+    &.active {
+      border-bottom: 3px solid white;
+    }
   }
 
   a:hover {

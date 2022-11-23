@@ -5,6 +5,7 @@ import {
   NavLeftSideName,
   NavRightSide,
 } from './styles'
+import { NavLink } from 'react-router-dom'
 import logo from '../../assets/newgo-logo.svg'
 
 export function Header() {
@@ -21,11 +22,21 @@ export function Header() {
           </NavLeftSideName>
         </NavLeftSide>
         <NavRightSide>
-          <a href="#">Home</a>
-          <a href="#">Quem somos?</a>
-          <a href="#">Contatos</a>
-          <a href="#">Cadastros</a>
-          <a href="#">Cálculos ADM</a>
+          <NavLink to="/" title="Página inicial">
+            Home
+          </NavLink>
+          <NavLink to="/sobrenos" title="Sobre nós">
+            Quem somos?
+          </NavLink>
+          <NavLink to="/contatos" title="Contatos">
+            Contatos
+          </NavLink>
+          <NavLink to="/contatos" title="Cadastrar">
+            Cadastros
+          </NavLink>
+          <NavLink to="/contatos" title="Cálculos da administração">
+            Cálculos ADM
+          </NavLink>
         </NavRightSide>
       </NavBar>
     </HeaderApp>
