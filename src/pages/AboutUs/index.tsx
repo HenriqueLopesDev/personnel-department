@@ -1,3 +1,9 @@
+import { HomeMainContainer } from './styles'
+
 export function AboutUs() {
-  return <h1>Sobre nós</h1>
+  return (
+    <HomeMainContainer>
+      <h1>Sobre nós</h1>
+    </HomeMainContainer>
+  )
 }
