@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import background from '../assets/programando.png'
 
 export const GlobalStyle = createGlobalStyle`
     *{
@@ -25,5 +26,10 @@ export const GlobalStyle = createGlobalStyle`
         font-family: 'Roboto', sans-serif;
         font-weight: 400;
         font-size: 1rem;
+    }
+
+    main{
+        background-image: url(${background});
+        background-size: cover;
     }
 `
