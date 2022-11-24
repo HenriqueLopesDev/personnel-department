@@ -1,6 +1,8 @@
 import { HomeMainContainer } from './styles'
 
 export function Home() {
+  document.title = 'NewGo | Transformando o mundo através da tecnologia'
+
   return (
     <HomeMainContainer>
       <h1>

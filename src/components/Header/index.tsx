@@ -31,10 +31,10 @@ export function Header() {
           <NavLink to="/contatos" title="Contatos">
             Contatos
           </NavLink>
-          <NavLink to="/contatos" title="Cadastrar">
+          <NavLink to="/cadastrar" title="Cadastrar">
             Cadastros
           </NavLink>
-          <NavLink to="/contatos" title="Cálculos da administração">
+          <NavLink to="/calculos" title="Cálculos da administração">
             Cálculos ADM
           </NavLink>
         </NavRightSide>

@@ -6,6 +6,8 @@ import {
 } from './styles'
 
 export function AboutUs() {
+  document.title = 'NewGo | Quem somos'
+
   return (
     <AboutUsMainContainer>
       <AboutUsMainContent>
