@@ -1,18 +1,25 @@
-import {
-  HeaderApp,
-  NavBar,
-  NavLeftSide,
-  NavLeftSideName,
-  NavRightSide,
-} from './styles'
-import { NavLink } from 'react-router-dom'
+import { useState } from 'react'
 import logo from '../../assets/newgo-logo.svg'
+import {
+  Astyled,
+  HeaderMain,
+  LeftSide,
+  MainNav,
+  MobileLink,
+  MobileMenu,
+  NavLeftSideName,
+  PcMenu,
+  RightSide,
+  StyledClose,
+  StyledHamburguer,
+} from './styles'
 
 export function Header() {
+  const [isOpen, setIsOpen] = useState(false)
   return (
-    <HeaderApp>
-      <NavBar>
-        <NavLeftSide>
+    <HeaderMain isOpen={isOpen}>
+      <MainNav>
+        <LeftSide>
           <img src={logo} alt="Imagem com a logo da empresa NewGo" />
           <NavLeftSideName>
             <h1>
@@ -20,25 +27,59 @@ export function Header() {
             </h1>
             <h2>Tecnologia</h2>
           </NavLeftSideName>
-        </NavLeftSide>
-        <NavRightSide>
-          <NavLink to="/" title="Página inicial">
-            Home
-          </NavLink>
-          <NavLink to="/sobrenos" title="Sobre nós">
-            Quem somos?
-          </NavLink>
-          <NavLink to="/contatos" title="Contatos">
-            Contatos
-          </NavLink>
-          <NavLink to="/cadastrar" title="Cadastrar">
-            Cadastros
-          </NavLink>
-          <NavLink to="/calculos" title="Cálculos da administração">
-            Cálculos ADM
-          </NavLink>
-        </NavRightSide>
-      </NavBar>
-    </HeaderApp>
+        </LeftSide>
+        <RightSide>
+          {isOpen ? (
+            <StyledClose
+              onClick={() => setIsOpen((state) => !state)}
+              size={32}
+              color="white"
+              weight="bold"
+            />
+          ) : (
+            <StyledHamburguer
+              onClick={() => setIsOpen((state) => !state)}
+              size={32}
+              color="white"
+              weight="bold"
+            />
+          )}
+          <PcMenu>
+            <li>
+              <Astyled to="/">Home</Astyled>
+            </li>
+            <li>
+              <Astyled to="/sobrenos">Quem somos?</Astyled>
+            </li>
+            <li>
+              <Astyled to="/contatos">Contatos</Astyled>
+            </li>
+            <li>
+              <Astyled to="/cadastrar">Cadastros</Astyled>
+            </li>
+            <li>
+              <Astyled to="/calculos">Cálculos ADM</Astyled>
+            </li>
+          </PcMenu>
+        </RightSide>
+      </MainNav>
+      <MobileMenu isOpen={isOpen}>
+        <li>
+          <MobileLink to="/">Home</MobileLink>
+        </li>
+        <li>
+          <MobileLink to="/sobrenos">Quem somos?</MobileLink>
+        </li>
+        <li>
+          <MobileLink to="/contatos">Contatos</MobileLink>
+        </li>
+        <li>
+          <MobileLink to="/cadastrar">Cadastros</MobileLink>
+        </li>
+        <li>
+          <MobileLink to="/calculos">Cálculos ADM</MobileLink>
+        </li>
+      </MobileMenu>
+    </HeaderMain>
   )
 }

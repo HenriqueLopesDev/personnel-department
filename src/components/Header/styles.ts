@@ -1,6 +1,11 @@
+import { List, X } from 'phosphor-react'
+import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
+interface MobileMenuProps {
+  isOpen: boolean
+}
 
-export const HeaderApp = styled.header`
+export const HeaderMain = styled.header<MobileMenuProps>`
   padding: 0.5rem 1.25rem;
   background: linear-gradient(
       0deg,
@@ -9,20 +14,33 @@ export const HeaderApp = styled.header`
     ),
     #000000;
   border-bottom: 3px solid ${(props) => props.theme.white};
+
+  @media (max-width: 700px) {
+    display: flex;
+    flex-direction: column;
+  }
 `
-export const NavBar = styled.nav`
+
+export const MainNav = styled.nav`
   display: flex;
   align-items: center;
+  flex-wrap: wrap; /*Talvez apagar*/
   justify-content: space-between;
 `
-
-export const NavLeftSide = styled.div`
+export const LeftSide = styled.div`
   display: flex;
   align-items: center;
-  font-size: 1.125rem;
   gap: 1rem;
+`
 
-  span {
+export const NavLeftSideName = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.125rem;
+
+  h1 span {
     font-size: 2rem;
     font-weight: 900;
     -webkit-text-fill-color: transparent;
@@ -45,31 +63,78 @@ export const NavLeftSide = styled.div`
     letter-spacing: 0.125rem;
   }
 `
+export const RightSide = styled.div``
 
-export const NavLeftSideName = styled.div`
+export const PcMenu = styled.ul`
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-`
-export const NavRightSide = styled.div`
-  display: flex;
   gap: 1rem;
+  list-style: none;
+`
+export const Astyled = styled(NavLink)`
+  color: white;
+  font-weight: 500;
+  font-size: 1.125rem;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  transition: border-bottom 0.3s;
 
-  a {
-    color: ${(props) => props.theme.white};
-    font-weight: 500;
-    font-size: 1.125rem;
-    border-top: 3px solid transparent;
-    border-bottom: 3px solid transparent;
-    transition: border-bottom 0.3s;
-
-    &.active {
-      border-bottom: 3px solid white;
-    }
+  &.active {
+    border-bottom: 3px solid white;
   }
 
-  a:hover {
+  &:hover {
+    border-bottom-color: white;
+  }
+
+  @media (max-width: 700px) {
+    display: none;
+  }
+`
+export const StyledHamburguer = styled(List)`
+  display: none;
+  cursor: pointer;
+
+  @media (max-width: 700px) {
+    display: flex;
+  }
+`
+export const StyledClose = styled(X)`
+  display: none;
+  cursor: pointer;
+
+  @media (max-width: 700px) {
+    display: flex;
+  }
+`
+
+export const MobileMenu = styled.ul<MobileMenuProps>`
+  display: none;
+  list-style: none;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+
+  @media (max-width: 700px) {
+    overflow: hidden;
+    display: flex;
+    max-height: ${({ isOpen }) => (isOpen ? '300px' : '0')};
+    transition: max-height 0.8s ease-in-out;
+  }
+`
+export const MobileLink = styled(NavLink)`
+  color: white;
+  font-weight: 500;
+  font-size: 1.125rem;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  transition: border-bottom 0.3s;
+
+  &.active {
     border-bottom: 3px solid white;
+  }
+
+  &:hover {
+    border-bottom-color: white;
   }
 `
