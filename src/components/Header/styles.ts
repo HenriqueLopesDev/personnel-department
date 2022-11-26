@@ -138,3 +138,58 @@ export const MobileLink = styled(NavLink)`
     border-bottom-color: white;
   }
 `
+export const DropDownMenu = styled.li`
+  position: relative;
+
+  ul {
+    display: none;
+    position: absolute;
+    border-radius: 4px;
+    width: 180px;
+    background-color: #00093a;
+    right: 0;
+    list-style: none;
+  }
+
+  &:hover {
+    ul {
+      display: block;
+    }
+  }
+
+  ul li {
+    padding: 0.5rem;
+    text-align: center;
+    border-bottom: 2px solid ${(props) => props.theme['blue-border']};
+    transition: background 0.3s;
+
+    &:hover {
+      background: #000d55;
+    }
+  }
+  ul li a {
+    font-size: 1rem;
+    font-weight: 400;
+    border: none;
+  }
+`
+
+export const NavTitleDropDown = styled.span`
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  color: white;
+  font-weight: 500;
+  font-size: 1.125rem;
+  border-top: 3px solid transparent;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+
+  &.active {
+    border-bottom: 3px solid white;
+  }
+
+  @media (max-width: 700px) {
+    display: none;
+  }
+`

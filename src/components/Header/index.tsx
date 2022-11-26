@@ -1,3 +1,4 @@
+import { CaretDown } from 'phosphor-react'
 import { useState } from 'react'
 import logo from '../../assets/newgo-logo.svg'
 import {
@@ -12,6 +13,8 @@ import {
   RightSide,
   StyledClose,
   StyledHamburguer,
+  DropDownMenu,
+  NavTitleDropDown,
 } from './styles'
 
 export function Header() {
@@ -54,12 +57,36 @@ export function Header() {
             <li>
               <Astyled to="/contatos">Contatos</Astyled>
             </li>
-            <li>
-              <Astyled to="/cadastrar">Cadastros</Astyled>
-            </li>
-            <li>
-              <Astyled to="/calculos">Cálculos ADM</Astyled>
-            </li>
+            <DropDownMenu>
+              <NavTitleDropDown>
+                Cadastros <CaretDown size={18} color="white" weight="bold" />
+              </NavTitleDropDown>
+              <ul>
+                <li>
+                  <Astyled to="/cadastrar">Cadastrar funcionário</Astyled>
+                </li>
+                <li>
+                  <Astyled to="/cadastrar">Cadastrar colaborador</Astyled>
+                </li>
+              </ul>
+            </DropDownMenu>
+            <DropDownMenu>
+              <NavTitleDropDown>
+                Cálculos ADM
+                <CaretDown size={18} color="white" weight="bold" />
+              </NavTitleDropDown>
+              <ul>
+                <li>
+                  <Astyled to="/cadastrar">Calcular férias</Astyled>
+                </li>
+                <li>
+                  <Astyled to="/cadastrar">Calcular 13º</Astyled>
+                </li>
+                <li>
+                  <Astyled to="/cadastrar">Calcular folha de pagamento</Astyled>
+                </li>
+              </ul>
+            </DropDownMenu>
           </PcMenu>
         </RightSide>
       </MainNav>
