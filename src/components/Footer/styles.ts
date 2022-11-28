@@ -15,6 +15,7 @@ export const FooterContent = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 
   padding: 0.75rem 2rem;
 
@@ -24,6 +25,15 @@ export const FooterContent = styled.div`
     line-height: 1.5;
     color: ${(props) => props.theme['gray-text']};
   }
+
+  @media (max-width: 826px) {
+    gap: 1rem;
+  }
+
+  /* @media (max-width: 860px) {
+    flex-direction: column;
+    align-items: flex-start;
+  } */
 `
 
 export const IconsContainer = styled.div`
@@ -50,5 +60,17 @@ export const CopyrightMessage = styled.div`
     color: ${(props) => props.theme['gray-text']};
     font-size: 1.125rem;
     font-weight: 400;
+  }
+
+  @media (max-width: 750px) {
+    h1 {
+      font-size: 80%;
+    }
+  }
+
+  @media (max-width: 450px) {
+    h1 {
+      font-size: 60%;
+    }
   }
 `
