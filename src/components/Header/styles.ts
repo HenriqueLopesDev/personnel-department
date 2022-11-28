@@ -15,7 +15,7 @@ export const HeaderMain = styled.header<MobileMenuProps>`
     #000000;
   border-bottom: 3px solid ${(props) => props.theme.white};
 
-  @media (max-width: 700px) {
+  @media (max-width: 750px) {
     display: flex;
     flex-direction: column;
   }
@@ -87,7 +87,7 @@ export const Astyled = styled(NavLink)`
     border-bottom-color: white;
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 750px) {
     display: none;
   }
 `
@@ -95,7 +95,7 @@ export const StyledHamburguer = styled(List)`
   display: none;
   cursor: pointer;
 
-  @media (max-width: 700px) {
+  @media (max-width: 750px) {
     display: flex;
   }
 `
@@ -103,7 +103,7 @@ export const StyledClose = styled(X)`
   display: none;
   cursor: pointer;
 
-  @media (max-width: 700px) {
+  @media (max-width: 750px) {
     display: flex;
   }
 `
@@ -115,7 +115,7 @@ export const MobileMenu = styled.ul<MobileMenuProps>`
   gap: 0.5rem;
   align-items: center;
 
-  @media (max-width: 700px) {
+  @media (max-width: 750px) {
     overflow: hidden;
     display: flex;
     max-height: ${({ isOpen }) => (isOpen ? '300px' : '0')};
@@ -189,7 +189,7 @@ export const NavTitleDropDown = styled.span`
     border-bottom: 3px solid white;
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 750px) {
     display: none;
   }
 `
