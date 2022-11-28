@@ -15,4 +15,10 @@ export const HomeMainContainer = styled.main`
     color: #002abf;
     font-weight: 900;
   }
+
+  @media (max-width: 440px) {
+    h1 {
+      width: auto;
+    }
+  }
 `
