@@ -1,4 +1,4 @@
-import { CaretDown } from 'phosphor-react'
+import { CaretDown, CaretUp } from 'phosphor-react'
 import { useState } from 'react'
 import logo from '../../assets/newgo-logo.svg'
 import {
@@ -15,10 +15,18 @@ import {
   StyledHamburguer,
   DropDownMenu,
   NavTitleDropDown,
+  MobileSubmenu,
+  RegisterDropDownMenu,
+  LiDropDownMenu,
+  SubMenuMobileLink,
+  AdminDropDownMenu,
 } from './styles'
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
+  const [isRegisterMenuOpen, setRegisterMenuOpen] = useState(false)
+  const [isAdmMenuOpen, setAdmMenuOpen] = useState(false)
+
   return (
     <HeaderMain isOpen={isOpen}>
       <MainNav>
@@ -63,7 +71,7 @@ export function Header() {
               </NavTitleDropDown>
               <ul>
                 <li>
-                  <Astyled to="/cadastrar">Cadastrar funcionário</Astyled>
+                  <Astyled to="/cadastrar">Cadastrar usuário</Astyled>
                 </li>
                 <li>
                   <Astyled to="/cadastrar">Cadastrar colaborador</Astyled>
@@ -100,12 +108,63 @@ export function Header() {
         <li>
           <MobileLink to="/contatos">Contatos</MobileLink>
         </li>
-        <li>
-          <MobileLink to="/cadastrar">Cadastros</MobileLink>
-        </li>
-        <li>
-          <MobileLink to="/calculos">Cálculos ADM</MobileLink>
-        </li>
+        <LiDropDownMenu>
+          {/* <MobileLink to="/cadastrar">Cadastros</MobileLink> */}
+          <MobileSubmenu onClick={() => setRegisterMenuOpen((state) => !state)}>
+            {!isRegisterMenuOpen ? (
+              <>
+                Cadastros <CaretDown size={16} color="white" weight="bold" />
+              </>
+            ) : (
+              <>
+                Cadastros <CaretUp size={16} color="white" weight="bold" />{' '}
+              </>
+            )}
+          </MobileSubmenu>
+          <RegisterDropDownMenu isRegisterMenuOpen={isRegisterMenuOpen}>
+            <li>
+              <SubMenuMobileLink to="/cadastrarUsuario">
+                Cadastrar usuário
+              </SubMenuMobileLink>
+            </li>
+            <li>
+              <SubMenuMobileLink to="/cadastrarColaborador">
+                Cadastrar colaborador
+              </SubMenuMobileLink>
+            </li>
+          </RegisterDropDownMenu>
+        </LiDropDownMenu>
+        <LiDropDownMenu>
+          {/* <MobileLink to="/cadastrar">Cadastros</MobileLink> */}
+          <MobileSubmenu onClick={() => setAdmMenuOpen((state) => !state)}>
+            {!isAdmMenuOpen ? (
+              <>
+                Cálculos ADM <CaretDown size={16} color="white" weight="bold" />
+              </>
+            ) : (
+              <>
+                Cálculos ADM <CaretUp size={16} color="white" weight="bold" />{' '}
+              </>
+            )}
+          </MobileSubmenu>
+          <AdminDropDownMenu isAdminMenuOpen={isAdmMenuOpen}>
+            <li>
+              <SubMenuMobileLink to="/calcularFerias">
+                Calcular férias
+              </SubMenuMobileLink>
+            </li>
+            <li>
+              <SubMenuMobileLink to="/Calcular13">
+                Calcular 13º
+              </SubMenuMobileLink>
+            </li>
+            <li>
+              <SubMenuMobileLink to="/Calcularfolhapgt">
+                Calcular folha de pagamento
+              </SubMenuMobileLink>
+            </li>
+          </AdminDropDownMenu>
+        </LiDropDownMenu>
       </MobileMenu>
     </HeaderMain>
   )

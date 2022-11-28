@@ -5,6 +5,14 @@ interface MobileMenuProps {
   isOpen: boolean
 }
 
+interface RegisterDropDownMenuProps {
+  isRegisterMenuOpen?: boolean
+}
+
+interface AdminDropDownMenuProps {
+  isAdminMenuOpen?: boolean
+}
+
 export const HeaderMain = styled.header<MobileMenuProps>`
   padding: 0.5rem 1.25rem;
   background: linear-gradient(
@@ -122,6 +130,29 @@ export const MobileMenu = styled.ul<MobileMenuProps>`
     transition: max-height 0.8s ease-in-out;
   }
 `
+
+export const RegisterDropDownMenu = styled.ul<RegisterDropDownMenuProps>`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  gap: 0.5rem;
+  transition: max-height 0.8s ease-in-out;
+  overflow: hidden;
+  max-height: ${({ isRegisterMenuOpen }) =>
+    isRegisterMenuOpen ? '300px' : '0'};
+`
+
+export const SubMenuMobileLink = styled(NavLink)`
+  color: ${(props) => props.theme['gray-text']};
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.5s;
+
+  &:hover {
+    color: ${(props) => props.theme.white};
+  }
+`
 export const MobileLink = styled(NavLink)`
   color: white;
   font-weight: 500;
@@ -137,6 +168,26 @@ export const MobileLink = styled(NavLink)`
   &:hover {
     border-bottom-color: white;
   }
+`
+
+export const MobileSubmenu = styled.span`
+  display: flex;
+  text-align: center;
+  gap: 0.5rem;
+  align-items: center;
+  cursor: pointer;
+  color: white;
+  font-weight: 500;
+  font-size: 1.125rem;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  transition: border-bottom 0.3s;
+`
+
+export const LiDropDownMenu = styled.li`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
 export const DropDownMenu = styled.li`
   position: relative;
@@ -192,4 +243,9 @@ export const NavTitleDropDown = styled.span`
   @media (max-width: 750px) {
     display: none;
   }
+`
+export const AdminDropDownMenu = styled(
+  RegisterDropDownMenu,
+)<AdminDropDownMenuProps>`
+  max-height: ${({ isAdminMenuOpen }) => (isAdminMenuOpen ? '300px' : '0')};
 `
