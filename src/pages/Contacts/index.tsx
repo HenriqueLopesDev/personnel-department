@@ -2,11 +2,11 @@ import {
   Options,
   ContactsContainer,
   ContactsTitles,
-  Email,
+  Option,
   Icons,
-  Line,
   SocialMedias,
   SocialMediasContainer,
+  OtherOptions,
 } from './styles'
 import {
   InstagramLogo,
@@ -60,20 +60,20 @@ export function Contacts() {
             </a>
           </Icons>
         </SocialMedias>
+        <OtherOptions>
+          <h2>Ou então</h2>
+        </OtherOptions>
       </SocialMediasContainer>
-      <Line>
-        <hr />
-      </Line>
       <Options>
-        <Email>
+        <Option>
           <Envelope size={32} color="#bebebe" weight="fill" />
           <h3>E-mail</h3>
           <p>Envie-nos uma mensagem a qualquer momento</p>
           <span>
             <a href="mailto:contato@newgo.com.br">contato@newgo.com.br</a>
           </span>
-        </Email>
-        <Email>
+        </Option>
+        <Option>
           <MapPin size={32} color="#bebebe" weight="fill" />
           <h3>Mapa</h3>
           <p>Saiba como nos encontrar</p>
@@ -85,15 +85,15 @@ export function Contacts() {
               Acessar no Google Maps
             </a>
           </span>
-        </Email>
-        <Email>
+        </Option>
+        <Option>
           <Phone size={32} color="#bebebe" weight="fill" />
           <h3>Telefone</h3>
           <p>Disponível em horário comercial das 09:00 às 18:00 </p>
           <span>
             <a href="tel:+5511932989996">+55 (11) 9 3298-9996</a>
           </span>
-        </Email>
+        </Option>
       </Options>
     </ContactsContainer>
   )
