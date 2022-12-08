@@ -51,8 +51,6 @@ export function User() {
   const userPass = watch('passInput')
   const isSubmitDisabled = userName && userPass
 
-  function clique() {}
-
   return (
     <>
       <ToastContainer
@@ -97,11 +95,7 @@ export function User() {
               <NavLink to="/visualizarFuncionarios">
                 Visualizar usuários
               </NavLink>
-              <button
-                type="submit"
-                onClick={clique}
-                disabled={!isSubmitDisabled}
-              >
+              <button type="submit" disabled={!isSubmitDisabled}>
                 Cadastrar
               </button>
             </ButtonOptions>
