@@ -4,9 +4,21 @@ import {
   FormContainer,
   FormTitle,
   InputContent,
+  ButtonOptions,
 } from '../AddUser/styles'
 
-export const MainEmployer = styled(MainUser)``
+interface InlineInputsContainerProps {
+  contentPosition?: string
+}
+
+interface InlineInputProps {
+  inputWidth?: string
+}
+
+export const MainEmployer = styled(MainUser)`
+  padding: 2rem 0;
+  height: auto;
+`
 
 export const FormEmployerContainer = styled(FormContainer)`
   width: 50rem;
@@ -25,13 +37,14 @@ export const FormEmployerMain = styled.form`
 export const FormEmployerInputContent = styled(InputContent)`
   padding: 0 1rem;
 `
-export const InlineInputsContainer = styled.div`
+export const InlineInputsContainer = styled.div<InlineInputsContainerProps>`
   display: flex;
-  justify-content: space-between;
+  justify-content: ${({ contentPosition }) =>
+    contentPosition || 'space-between'};
   padding: 0 1rem;
 `
 
-export const InlineInput = styled.div`
+export const InlineInput = styled.div<InlineInputProps>`
   display: flex;
   gap: 0.5rem;
   flex-direction: column;
@@ -44,7 +57,8 @@ export const InlineInput = styled.div`
 
   input {
     height: 2rem;
-    width: 21.875rem;
+    width: ${({ inputWidth }) =>
+      inputWidth ? `${inputWidth}rem` : '21.875rem'};
     padding-left: 0.5rem;
     border-radius: 4px;
     outline: none;
@@ -61,4 +75,8 @@ export const InlineInput = styled.div`
   input:focus {
     outline: 2px solid ${(props) => props.theme['blue-form']};
   }
+`
+
+export const FormButtons = styled(ButtonOptions)`
+  padding: 0 1rem;
 `
