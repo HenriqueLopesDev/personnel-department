@@ -93,7 +93,9 @@ export function Header() {
                   <Astyled to="/cadastrar">Calcular 13º</Astyled>
                 </li>
                 <li>
-                  <Astyled to="/cadastrar">Calcular folha de pagamento</Astyled>
+                  <Astyled to="/calcular/folhapagamento">
+                    Calcular folha de pagamento
+                  </Astyled>
                 </li>
               </ul>
             </DropDownMenu>
@@ -161,7 +163,7 @@ export function Header() {
               </SubMenuMobileLink>
             </li>
             <li>
-              <SubMenuMobileLink to="/Calcularfolhapgt">
+              <SubMenuMobileLink to="/calcular/folhapagamento">
                 Calcular folha de pagamento
               </SubMenuMobileLink>
             </li>
