@@ -6,12 +6,15 @@ import {
   RegisterForm,
   InputContent,
   ButtonOptions,
+  EyeOpened,
+  EyeClosed,
 } from './styles'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as zod from 'zod'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { useState } from 'react'
 
 const newUserFormValidation = zod.object({
   userInput: zod.string().min(1, 'Informe o nome do usuário'),
@@ -22,6 +25,8 @@ type UserRegisterFormData = zod.infer<typeof newUserFormValidation>
 
 export function User() {
   document.title = 'NewGo | Cadastro de usuários'
+
+  const [seePw, setSeePw] = useState(false)
 
   const { register, handleSubmit, watch, reset } =
     useForm<UserRegisterFormData>({
@@ -45,6 +50,7 @@ export function User() {
       theme: 'dark',
     })
     reset()
+    setSeePw(false)
   }
 
   const userName = watch('userInput')
@@ -85,11 +91,26 @@ export function User() {
               <label htmlFor="passInput">Senha</label>
               <input
                 id="passInput"
-                type="password"
+                type={seePw ? 'text' : 'password'}
                 placeholder="Insira a senha do usuário"
                 required
                 {...register('passInput')}
               />
+              {seePw ? (
+                <EyeOpened
+                  size={16}
+                  color="#bebebe"
+                  weight="bold"
+                  onClick={() => setSeePw((state) => !state)}
+                />
+              ) : (
+                <EyeClosed
+                  size={16}
+                  color="#bebebe"
+                  weight="bold"
+                  onClick={() => setSeePw((state) => !state)}
+                />
+              )}
             </InputContent>
             <ButtonOptions>
               <NavLink to="/visualizarFuncionarios">

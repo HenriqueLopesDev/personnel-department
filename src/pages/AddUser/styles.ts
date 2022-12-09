@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Eye, EyeSlash } from 'phosphor-react'
 
 export const MainUser = styled.main`
   display: flex;
@@ -95,4 +96,13 @@ export const ButtonOptions = styled.div`
     opacity: 0.7;
     cursor: not-allowed;
   }
+`
+
+export const EyeOpened = styled(Eye)`
+  position: absolute;
+  transform: translate(348px, 38px);
+`
+export const EyeClosed = styled(EyeSlash)`
+  position: absolute;
+  transform: translate(348px, 38px);
 `
