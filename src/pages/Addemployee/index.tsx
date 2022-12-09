@@ -14,7 +14,8 @@ import { ToastContainer, toast } from 'react-toastify'
 import axios from 'axios'
 
 export function Employee() {
-  const { register, handleSubmit, reset, setValue, setFocus } = useForm()
+  document.title = 'NewGo | Cadastro de colaboradores'
+  const { register, handleSubmit, reset, setValue, setFocus, watch } = useForm()
 
   function handleAddNewEmployee(data: any) {
     console.log(data)
@@ -80,6 +81,33 @@ export function Employee() {
         })
     }
   }
+
+  const nameWatch = watch('name')
+  const roleWatch = watch('role')
+  const areaWatch = watch('area')
+  const phoneWatch = watch('phone')
+  const startDateWatch = watch('startDate')
+  const emailWatch = watch('email')
+  const cepWatch = watch('cep')
+  const logradouroWatch = watch('logradouro')
+  const numberWatch = watch('number')
+  const bairroWatch = watch('bairro')
+  const cidadeWatch = watch('cidade')
+  const estadoWatch = watch('estado')
+
+  const isSubmitDisabled =
+    nameWatch &&
+    roleWatch &&
+    areaWatch &&
+    phoneWatch &&
+    startDateWatch &&
+    emailWatch &&
+    cepWatch &&
+    logradouroWatch &&
+    numberWatch &&
+    bairroWatch &&
+    cidadeWatch &&
+    estadoWatch
 
   return (
     <>
@@ -246,7 +274,9 @@ export function Employee() {
               <NavLink to="/visualizarColaboradores">
                 Visualizar Colaboradores
               </NavLink>
-              <button type="submit">Cadastrar</button>
+              <button type="submit" disabled={!isSubmitDisabled}>
+                Cadastrar
+              </button>
             </FormButtons>
           </FormEmployerMain>
         </FormEmployerContainer>
