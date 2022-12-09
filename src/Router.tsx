@@ -13,8 +13,10 @@ export function Router() {
         <Route path="/" element={<Home />} />
         <Route path="/sobrenos" element={<AboutUs />} />
         <Route path="/contatos" element={<Contacts />} />
-        <Route path="/cadastrarUsuario" element={<User />} />
-        <Route path="/cadastrarColaborador" element={<Employee />} />
+        <Route path="/cadastrar">
+          <Route path="/cadastrar/usuario" element={<User />} />
+          <Route path="/cadastrar/colaborador" element={<Employee />} />
+        </Route>
       </Route>
     </Routes>
   )

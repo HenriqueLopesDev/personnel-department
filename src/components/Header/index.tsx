@@ -71,10 +71,10 @@ export function Header() {
               </NavTitleDropDown>
               <ul>
                 <li>
-                  <Astyled to="/cadastrarUsuario">Cadastrar usuário</Astyled>
+                  <Astyled to="/cadastrar/usuario">Cadastrar usuário</Astyled>
                 </li>
                 <li>
-                  <Astyled to="/cadastrarColaborador">
+                  <Astyled to="/cadastrar/colaborador">
                     Cadastrar colaborador
                   </Astyled>
                 </li>
@@ -125,12 +125,12 @@ export function Header() {
           </MobileSubmenu>
           <RegisterDropDownMenu isRegisterMenuOpen={isRegisterMenuOpen}>
             <li>
-              <SubMenuMobileLink to="/cadastrarUsuario">
+              <SubMenuMobileLink to="/cadastrar/usuario">
                 Cadastrar usuário
               </SubMenuMobileLink>
             </li>
             <li>
-              <SubMenuMobileLink to="/cadastrarColaborador">
+              <SubMenuMobileLink to="/cadastrar/colaborador">
                 Cadastrar colaborador
               </SubMenuMobileLink>
             </li>
