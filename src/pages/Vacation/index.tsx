@@ -15,8 +15,12 @@ import { VacationResult } from './components/VacationResult'
 const VacationFormValidation = zod.object({
   employeeName: zod.string().min(1, 'Informe o nome do colaborador'),
   employeeSalary: zod.string().min(1, 'Informe o salário do colaborador'),
-  employeeAvg: zod.string().min(1, 'Informe o salário do colaborador'),
-  daysAmount: zod.string().min(1, 'Informe o salário do colaborador'),
+  employeeAvg: zod
+    .string()
+    .min(1, 'Informe a média de horas trabalhadas pelo colaborador'),
+  daysAmount: zod
+    .string()
+    .min(1, 'Informe a quantidades de dias de férias para o colaborador'),
 })
 
 type VacationFormData = zod.infer<typeof VacationFormValidation>
