@@ -100,9 +100,11 @@ export const ButtonOptions = styled.div`
 
 export const EyeOpened = styled(Eye)`
   position: absolute;
+  cursor: pointer;
   transform: translate(348px, 38px);
 `
 export const EyeClosed = styled(EyeSlash)`
   position: absolute;
+  cursor: pointer;
   transform: translate(348px, 38px);
 `

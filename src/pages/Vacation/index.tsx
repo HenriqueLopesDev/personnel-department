@@ -6,15 +6,34 @@ import {
   VacationFormTitle,
   VacationFormButton,
 } from './styles'
+import { zodResolver } from '@hookform/resolvers/zod'
+import * as zod from 'zod'
 import { useForm } from 'react-hook-form'
 import { useState } from 'react'
 import { VacationResult } from './components/VacationResult'
+
+const VacationFormValidation = zod.object({
+  employeeName: zod.string().min(1, 'Informe o nome do colaborador'),
+  employeeSalary: zod.string().min(1, 'Informe o salário do colaborador'),
+  employeeAvg: zod.string().min(1, 'Informe o salário do colaborador'),
+  daysAmount: zod.string().min(1, 'Informe o salário do colaborador'),
+})
+
+type VacationFormData = zod.infer<typeof VacationFormValidation>
 
 export function VacationPage() {
   document.title = 'NewGo | Cálculo de férias'
   const [seeResult, setSeeResult] = useState(false)
 
-  const { register, handleSubmit, watch } = useForm()
+  const { register, handleSubmit, watch } = useForm<VacationFormData>({
+    resolver: zodResolver(VacationFormValidation),
+    defaultValues: {
+      employeeName: '',
+      employeeSalary: '',
+      employeeAvg: '',
+      daysAmount: '',
+    },
+  })
 
   function handleGetResult(data: any) {
     console.log(data)
