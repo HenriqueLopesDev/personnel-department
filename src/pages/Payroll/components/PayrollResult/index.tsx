@@ -28,23 +28,32 @@ export function PayrollResult({ salary }: PayrollResultProps) {
     <>
       <FormInput>
         <label>Desconto do vale transporte</label>
-        <input disabled value={`R$ ${vt.toFixed(2)}`} />
+        <input disabled value={`R$ ${vt.toFixed(2).replace('.', ',')}`} />
       </FormInput>
       <FormInput>
         <label>Desconto de INSS</label>
-        <input disabled value={`R$ ${aliquota.toFixed(2)}`} />
+        <input disabled value={`R$ ${aliquota.toFixed(2).replace('.', ',')}`} />
       </FormInput>
       <FormInput>
         <label>Desconto de adiantamento salarial</label>
-        <input disabled value={`R$ ${adiantamento.toFixed(2)}`} />
+        <input
+          disabled
+          value={`R$ ${adiantamento.toFixed(2).replace('.', ',')}`}
+        />
       </FormInput>
       <FormInput>
         <label>Somatório dos descontos</label>
-        <input disabled value={`R$ ${allDiscounts.toFixed(2)}`} />
+        <input
+          disabled
+          value={`R$ ${allDiscounts.toFixed(2).replace('.', ',')}`}
+        />
       </FormInput>
       <FormInput>
         <label>Salário líquido</label>
-        <input disabled value={`R$ ${netSalary.toFixed(2)}`} />
+        <input
+          disabled
+          value={`R$ ${netSalary.toFixed(2).replace('.', ',')}`}
+        />
       </FormInput>
     </>
   )

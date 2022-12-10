@@ -19,15 +19,21 @@ export function VacationResult({
     <>
       <FormInput>
         <label>Valor base de férias</label>
-        <input disabled value={`R$ ${baseValue.toFixed(2)} `} />
+        <input
+          disabled
+          value={`R$ ${baseValue.toFixed(2).replace('.', ',')} `}
+        />
       </FormInput>
       <FormInput>
         <label>Valor do terço de férias</label>
-        <input disabled value={`R$ ${oneThirdValue.toFixed(2)}`} />
+        <input
+          disabled
+          value={`R$ ${oneThirdValue.toFixed(2).replace('.', ',')}`}
+        />
       </FormInput>
       <FormInput>
         <label>Total a receber</label>
-        <input disabled value={`R$ ${Total.toFixed(2)}`} />
+        <input disabled value={`R$ ${Total.toFixed(2).replace('.', ',')}`} />
       </FormInput>
     </>
   )
