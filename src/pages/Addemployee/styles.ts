@@ -24,6 +24,10 @@ export const FormEmployerContainer = styled(FormContainer)`
   width: 50rem;
   padding-bottom: 1rem;
   height: auto;
+
+  @media (max-width: 810px) {
+    width: auto;
+  }
 `
 
 export const FormEmployerTitle = styled(FormTitle)``
@@ -36,12 +40,27 @@ export const FormEmployerMain = styled.form`
 
 export const FormEmployerInputContent = styled(InputContent)`
   padding: 0 1rem;
+
+  @media (max-width: 810px) {
+    input {
+      width: auto;
+    }
+  }
 `
 export const InlineInputsContainer = styled.div<InlineInputsContainerProps>`
   display: flex;
   justify-content: ${({ contentPosition }) =>
     contentPosition || 'space-between'};
   padding: 0 1rem;
+  flex-wrap: wrap;
+
+  @media (max-width: 810px) {
+    gap: 1rem;
+  }
+
+  @media (max-width: 690px) {
+    flex-direction: column;
+  }
 `
 
 export const InlineInput = styled.div<InlineInputProps>`
@@ -75,8 +94,25 @@ export const InlineInput = styled.div<InlineInputProps>`
   input:focus {
     outline: 2px solid ${(props) => props.theme['blue-form']};
   }
+
+  @media (max-width: 810px) {
+    input {
+      width: 20rem;
+    }
+  }
+
+  @media (max-width: 360px) {
+    input {
+      width: 15rem;
+    }
+  }
 `
 
 export const FormButtons = styled(ButtonOptions)`
   padding: 0 1rem;
+
+  @media (max-width: 360px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
 `

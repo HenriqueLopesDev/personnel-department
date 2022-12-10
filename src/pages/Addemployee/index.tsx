@@ -200,7 +200,7 @@ export function Employee() {
                   id="employeeZipCode"
                   type="text"
                   maxLength={8}
-                  placeholder="Insira o CEP do local de residência do colaborador"
+                  placeholder="Insira o CEP do local de residência"
                   {...register('cep')}
                   onBlur={getAdress}
                   required
@@ -211,7 +211,7 @@ export function Employee() {
                 <input
                   id="employeeAdress"
                   type="text"
-                  placeholder="Insira o endereço do colaborador"
+                  placeholder="Insira o endereço"
                   {...register('logradouro')}
                   required
                 />
@@ -223,7 +223,7 @@ export function Employee() {
                 <input
                   id="employeeAdressNumber"
                   type="text"
-                  placeholder="Insira o número da residência do colaborador"
+                  placeholder="Insira o número da residência"
                   {...register('number')}
                   required
                 />
@@ -233,7 +233,7 @@ export function Employee() {
                 <input
                   id="employeeAdressComplement"
                   type="text"
-                  placeholder="Insira o complemento da residência do colaborador"
+                  placeholder="Insira o complemento da residência"
                   {...register('complemento')}
                 />
               </InlineInput>
