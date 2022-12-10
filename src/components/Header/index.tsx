@@ -90,7 +90,7 @@ export function Header() {
                   <Astyled to="/calcular/ferias">Calcular férias</Astyled>
                 </li>
                 <li>
-                  <Astyled to="/cadastrar">Calcular 13º</Astyled>
+                  <Astyled to="/calcular/salario">Calcular 13º</Astyled>
                 </li>
                 <li>
                   <Astyled to="/calcular/folhapagamento">
@@ -158,7 +158,7 @@ export function Header() {
               </SubMenuMobileLink>
             </li>
             <li>
-              <SubMenuMobileLink to="/Calcular13">
+              <SubMenuMobileLink to="/calcular/salario">
                 Calcular 13º
               </SubMenuMobileLink>
             </li>
