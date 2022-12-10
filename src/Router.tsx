@@ -6,6 +6,7 @@ import { User } from './pages/AddUser'
 import { Contacts } from './pages/Contacts'
 import { Home } from './pages/Home'
 import { Payroll } from './pages/Payroll'
+import { VacationPage } from './pages/Vacation'
 
 export function Router() {
   return (
@@ -20,6 +21,7 @@ export function Router() {
         </Route>
         <Route path="/calcular">
           <Route path="/calcular/folhapagamento" element={<Payroll />} />
+          <Route path="/calcular/ferias" element={<VacationPage />} />
         </Route>
       </Route>
     </Routes>

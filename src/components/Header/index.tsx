@@ -87,7 +87,7 @@ export function Header() {
               </NavTitleDropDown>
               <ul>
                 <li>
-                  <Astyled to="/cadastrar">Calcular férias</Astyled>
+                  <Astyled to="/calcular/ferias">Calcular férias</Astyled>
                 </li>
                 <li>
                   <Astyled to="/cadastrar">Calcular 13º</Astyled>
@@ -153,7 +153,7 @@ export function Header() {
           </MobileSubmenu>
           <AdminDropDownMenu isAdminMenuOpen={isAdmMenuOpen}>
             <li>
-              <SubMenuMobileLink to="/calcularFerias">
+              <SubMenuMobileLink to="/calcular/ferias">
                 Calcular férias
               </SubMenuMobileLink>
             </li>
