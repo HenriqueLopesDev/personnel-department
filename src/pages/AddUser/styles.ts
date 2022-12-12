@@ -18,6 +18,14 @@ export const FormContainer = styled.div`
   gap: 2rem;
   border-radius: 8px;
   background-color: ${(props) => props.theme['form-background']};
+
+  @media (max-width: 400px) {
+    width: 20rem;
+  }
+
+  @media (max-width: 320px) {
+    width: 15rem;
+  }
 `
 
 export const FormTitle = styled.div`
@@ -71,7 +79,7 @@ export const InputContent = styled.div`
 export const ButtonOptions = styled.div`
   padding: 0 0.75rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: right;
 
   a,
   button {
@@ -102,9 +110,25 @@ export const EyeOpened = styled(Eye)`
   position: absolute;
   cursor: pointer;
   transform: translate(348px, 38px);
+
+  @media (max-width: 400px) {
+    transform: translate(268px, 38px);
+  }
+
+  @media (max-width: 320px) {
+    transform: translate(188px, 38px);
+  }
 `
 export const EyeClosed = styled(EyeSlash)`
   position: absolute;
   cursor: pointer;
   transform: translate(348px, 38px);
+
+  @media (max-width: 400px) {
+    transform: translate(268px, 38px);
+  }
+
+  @media (max-width: 320px) {
+    transform: translate(188px, 38px);
+  }
 `

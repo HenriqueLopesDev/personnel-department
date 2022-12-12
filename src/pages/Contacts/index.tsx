@@ -35,7 +35,7 @@ export function Contacts() {
               target="_blank"
               rel="noreferrer"
             >
-              <FacebookLogo size={32} color="#0184fe" weight="fill" />
+              <FacebookLogo size={32} color="#bebebe" weight="fill" />
               <span>Facebook</span>
             </a>
           </Icons>
@@ -45,7 +45,7 @@ export function Contacts() {
               target="_blank"
               rel="noreferrer"
             >
-              <InstagramLogo size={32} color="#fe9501" weight="fill" />
+              <InstagramLogo size={32} color="#bebebe" weight="fill" />
               <span>Instagram</span>
             </a>
           </Icons>
@@ -55,7 +55,7 @@ export function Contacts() {
               target="_blank"
               rel="noreferrer"
             >
-              <LinkedinLogo size={32} color="#0079d6" weight="fill" />
+              <LinkedinLogo size={32} color="#bebebe" weight="fill" />
               <span>LinkedIn</span>
             </a>
           </Icons>

@@ -1,4 +1,3 @@
-import { NavLink } from 'react-router-dom'
 import {
   FormEmployerContainer,
   MainEmployer,
@@ -271,9 +270,6 @@ export function Employee() {
               </InlineInput>
             </InlineInputsContainer>
             <FormButtons>
-              <NavLink to="/visualizarColaboradores">
-                Visualizar Colaboradores
-              </NavLink>
               <button type="submit" disabled={!isSubmitDisabled}>
                 Cadastrar
               </button>

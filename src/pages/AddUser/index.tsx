@@ -1,4 +1,3 @@
-import { NavLink } from 'react-router-dom'
 import {
   MainUser,
   FormContainer,
@@ -113,9 +112,6 @@ export function User() {
               )}
             </InputContent>
             <ButtonOptions>
-              <NavLink to="/visualizarFuncionarios">
-                Visualizar usuários
-              </NavLink>
               <button type="submit" disabled={!isSubmitDisabled}>
                 Cadastrar
               </button>
