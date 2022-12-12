@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
+import { Errorpage } from './components/Errorpage'
 import { DefaultLayout } from './layouts/DefaultLayout'
 import { AboutUs } from './pages/AboutUs'
 import { Employee } from './pages/AddEmployee'
@@ -25,6 +26,7 @@ export function Router() {
           <Route path="/calcular/ferias" element={<VacationPage />} />
           <Route path="/calcular/salario" element={<SalaryPage />} />
         </Route>
+        <Route path="*" element={<Errorpage />}></Route>
       </Route>
     </Routes>
   )
